@@ -146,14 +146,41 @@ elseif ($_REQUEST ['job'] == "change_status") {
 
 elseif ($_REQUEST ['job'] == "dict_search_ta_wiktionary") {
 	
+	
+	
 	$ta_json = file_get_contents ( 'https://ta.wiktionary.org/w/api.php?action=parse&format=json&prop=text|revid|displaytitle&callback=?&page=' . $_REQUEST ['search_text'] );
 	$ta_json2 = str_replace ( "/**/({", "{", "$ta_json" );
 	$ta_json3 = str_replace ( "})", "}", "$ta_json2" );
 	$ta_obj = json_decode ( $ta_json3, true );
-	$ta_text = $ta_obj [parse] [text] ['*'];
+	if(($ta_text = $ta_obj [parse] [text] ['*']) == null){
+		$result=0;
+		$add_wiki_text='<strong>'.$_REQUEST[search_text].'</strong> எனும் சொல் தமிழ் விக்சனரியில் இல்லை.
+			இச்சொல்லை <strong><i> மொழினி</i></strong> தன்னகத்தே சேமிக்கிறது.
+			இச்சொல்லை விக்சனரியில் சேர்ப்பதற்குக் கூடிய விரைவில் முயற்சியெடுக்கப்படும். நன்றி.
+			<br />
+			<br />
+			<a href="https://ta.wiktionary.org/w/index.php?title='.$_REQUEST[search_text].'&action=edit&redlink=1" >இந்த இணைப்பில் நீங்களே சொல்லினை விக்சனரியில் சேர்த்துவிடலாம்</a>
+			<br />
+					<br />
+			எடுத்துக்காட்டு : <br /><br />
+			<pre>
+==ஆங்கிலம்==
+===பெயர்ச்சொல்===
+\'\'\'{{PAGENAME}}\'\'\'
+# [[பந்து]]
+# [[உருண்டை]]
+		</pre>';
+	}
+	
+	else{
+		$result=1;
+		$add_wiki_text="";
+	}
 	
 	$array = array (
-			'text' => ($ta_text) 
+			'result' =>($result),
+			'text' => ($ta_text),
+			'add_wiki_text' =>($add_wiki_text) 
 	);
 	
 	echo json_encode ( $array );

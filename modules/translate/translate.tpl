@@ -64,7 +64,23 @@ function(err, data) {
   if (err != null) {
   } else {
 
-    document.getElementById('ta_wiktionary_results').innerHTML = (data.text); 
+    document.getElementById('ta_wiktionary_results').innerHTML = (data.text);
+
+if(data.result == 0){
+
+getJSON("translate.php?job=save_dict&term="+search_text,
+function(err, data2) {
+  if (err != null) {
+  } else {
+
+document.getElementById('ta_wiktionary_results').innerHTML = (data.add_wiki_text);
+  }
+});
+
+
+}
+else{}
+ 
   }
 });
 }
