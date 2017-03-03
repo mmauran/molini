@@ -1,4 +1,16 @@
 {include file="header.tpl"} {include file="navigation.tpl"} 
+<script type="text/javascript">
+{literal}
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+{/literal}
+
 
 <div class="container-fluid">
 
@@ -67,11 +79,28 @@
 <div class="container-fluid">
 
 <div class="col-md-6">
-
+<div>
+<button
+			type="button"
+			class="btn  btn-primary btn-sm"
+			onclick="copyToClipboard('#source')">Copy Text</button>
+</div>
+<br />
+<div id="source">
 {$view_array.source_text}
 </div>
+</div>
 <div class="col-md-6">
+<div>
+<button
+			type="button"
+			class="btn  btn-primary btn-sm"
+			onclick="copyToClipboard('#target')">Copy Text</button>
+</div>
+<br />
+<div id="target">
 {$view_array.target_text}
+</div>
 </div>
 
 </div>
