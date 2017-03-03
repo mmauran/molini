@@ -125,6 +125,7 @@ function molini_lookup_array($search_text, $line_id) {
 	
 	$sql = <<<SQL
 	SELECT
+	id as id,
 	source_line as result_source,
 	target_line as result_target
 	FROM text_lines
@@ -134,6 +135,7 @@ function molini_lookup_array($search_text, $line_id) {
 	AND line_status='COMPLETE'
 	UNION ALL
 	SELECT
+	id as id,
 	target_line as result_source,
 	source_line as result_target
 	FROM text_lines
@@ -154,6 +156,7 @@ SQL;
 	while ( $row = $result->fetch_assoc () ) {
 		
 		$lines_array [$i] = array (
+				'id' => ("$row[id]"),
 				'result_source' => ("$row[result_source]"),
 				'result_target' => ("$row[result_target]") 
 		);
@@ -163,9 +166,13 @@ SQL;
 	
 	foreach ( $lines_array as $line ) {
 		
+		$info=select_all_data('id', $line[id], 'text_lines');
+	$user_info=select_all_data('id', $info[original_user_id], 'users');
+		
+		
 		$source = str_replace ( "$search_text", "<strong><u>$search_text</u></strong>", $line [result_source] );
 		
-		$text = $text . $source . '<br />' . $line ['result_target'] . '<br /><hr>';
+		$text = $text . $source . '<br />' . $line ['result_target'] . '<br /><small>['."$user_info[user_name] : $info[target_updated]".']</small><hr>';
 	}
 	
 	$array = array (
