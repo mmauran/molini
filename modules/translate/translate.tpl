@@ -18,7 +18,24 @@ function(err, data) {
   } else {
     document.getElementById('saved_'+line_id).innerHTML = (data.text);
 	document.getElementById('translated_percentage').innerHTML = (data.translated_percentage);
-document.getElementById('completed_percentage').innerHTML = (data.completed_percentage);          
+	document.getElementById('completed_percentage').innerHTML = (data.completed_percentage);   
+
+if(data.line_status == 'PENDING'){
+
+getJSON("translate.php?job=change_status&line_id="+line_id+"&line_status=COMPLETE&button_name=complete",
+function(err, data) {
+  if (err != null) {
+  } else {
+	document.getElementById('pending_button_'+line_id).classList.remove('btn-primary');
+	document.getElementById('pending_button_'+line_id).classList.add('btn-default');
+	document.getElementById('complete_button_'+line_id).classList.remove('btn-default');
+	document.getElementById('complete_button_'+line_id).classList.add('btn-success');
+  }
+});
+
+}
+else{
+}
   }
 });
 }

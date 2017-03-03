@@ -78,10 +78,12 @@ function save_line($line_id, $target_line) {
 	update_data ( $target_line_data, 'text_lines', 'id', $line_id );
 	$text = "$current_time";
 	
+	
 	$array = array (
 			'text' => ($text),
 			'translated_percentage' => "$translated%",
-			'completed_percentage' => "$completed%" 
+			'completed_percentage' => "$completed%",
+			'line_status' => "$info[line_status]" 
 	)
 	;
 	
