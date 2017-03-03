@@ -301,11 +301,11 @@ function(err, data) {
 
 			<div class="col-md-6">
 				<textarea
-					class="form-control animated"
+					class="form-control animated no-border"
 					id="source_line_{$lines_array[results].line_id}"
 					name="source_line_{$lines_array[results].line_id}"
 					onblur="saveSourceLine({$lines_array[results].line_id});">{$lines_array[results].source_line}</textarea>
-				<div class="row">
+				<div class="row top-border">
 					<div class="btn-group col-md-1">
 						<button
 							class="btn btn-default btn-xs"
@@ -334,14 +334,14 @@ function(err, data) {
 							target="_blank"
 							role="button">G</a>
 					</div>
-
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="row">
+
 					<textarea
 						tabindex="{$lines_array[results].serial_order}"
-						class="form-control animated col-md-12"
+						class="form-control animated no-border"
 						id="target_line_{$lines_array[results].line_id}"
 						name="target_line_{$lines_array[results].line_id}"
 						onblur="saveLine({$lines_array[results].line_id});">{$lines_array[results].target_line}</textarea>
