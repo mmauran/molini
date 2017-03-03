@@ -7,8 +7,7 @@
 				$('.normal').autosize();
 				$('.animated').autosize();
 			});
-		</script>
-
+</script>
 <script type="text/javascript">
 function saveLine(line_id) {
 
@@ -23,6 +22,8 @@ document.getElementById('completed_percentage').innerHTML = (data.completed_perc
   }
 });
 }
+</script>
+<script type="text/javascript">
 function saveSourceLine(line_id) {
 
 var source_line = document.getElementById('source_line_'+line_id).value;
@@ -36,7 +37,6 @@ function(err, data) {
 });
 }
 </script>
-
 <script type="text/javascript">
 
 function dictSearchTaWiktionary() {
@@ -51,7 +51,8 @@ function(err, data) {
   }
 });
 }
-
+</script>
+<script type="text/javascript">
 function dictSearchEnWiktionary() {
 var search_text = document.getElementById('search_text').value;
 document.getElementById('en_wiktionary_results').innerHTML = ("Fetching..");
@@ -64,7 +65,8 @@ function(err, data) {
   }
 });
 }
-
+</script>
+<script type="text/javascript">
 function dictSearchMoliniLookup() {
 var search_text = document.getElementById('search_text').value;
 document.getElementById('molini_lookup_results').innerHTML = ("Fetching..");
@@ -77,13 +79,15 @@ function(err, data) {
   }
 });
 }
-
+</script>
+<script type="text/javascript">
 function lineSearchMoliniLookup(text) {
 
     document.getElementById('molini_lookup_results').innerHTML = (text); 
 
 }
-
+</script>
+<script type="text/javascript">
 function dictSearchMadura() {
 var search_text = document.getElementById('search_text').value;
 document.getElementById('madura_results').innerHTML = ("Fetching..");
@@ -96,7 +100,8 @@ function(err, data) {
   }
 });
 }
-
+</script>
+<script type="text/javascript">
 function changeStatus(line_id, line_status, button_name) {
 var b_pending = document.getElementById('pending_button_'+line_id);
 var b_complete = document.getElementById('complete_button_'+line_id);
@@ -120,7 +125,8 @@ b_fuzzy.classList.add(data.fuzzy_add);
   }
 });
 }
-
+</script>
+<script type="text/javascript">
 function deleteLine(line_id) {
 getJSON("translate.php?job=delete_line&line_id="+line_id,
 function(err, data) {
@@ -138,10 +144,7 @@ else{
   }
 });
 }
-
-
-
-  </script>
+</script>
 <script type="text/javascript">
 function viewJob(job_no) {
 document.getElementById('view_job_results').innerHTML = ("Fetching.."); 
@@ -319,7 +322,8 @@ function(err, data) {
 			</div>
 			<div class="col-md-6">
 				<div class="row">
-					<textarea tabindex="{$lines_array[results].serial_order}"
+					<textarea
+						tabindex="{$lines_array[results].serial_order}"
 						class="form-control animated col-md-12"
 						id="target_line_{$lines_array[results].line_id}"
 						name="target_line_{$lines_array[results].line_id}"
