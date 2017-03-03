@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+textarea {
+	border: 1px solid #F8F8FF;
+	vertical-align: top;
+}
+
+hr {
+	border-color: blue;
+}
+
+.animated {
+	color : black;
+	min-height: 2px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-webkit-transition: height 0.2s;
+	-moz-transition: height 0.2s;
+	transition: height 0.2s;
+}
+
+.timestamp_box {
+	color: grey;
+	font-size: 10px;
+	text-align: right;
+}
+
+.s_timestamp_box {
+	color: grey;
+	font-size: 10px;
+	text-align: right;
+}
+
+.molini_scroll {
+	height: 600px;
+	 overflow: scroll;
+}
+
+.clip_line td{
+	white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    height:10px;
+}   
+}
