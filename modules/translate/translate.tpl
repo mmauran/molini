@@ -20,7 +20,7 @@ function(err, data) {
 	document.getElementById('translated_percentage').innerHTML = (data.translated_percentage);
 	document.getElementById('completed_percentage').innerHTML = (data.completed_percentage);   
 
-if(data.line_status == 'PENDING'){
+if(data.line_status == 'PENDING' && target_line != ''){
 
 getJSON("translate.php?job=change_status&line_id="+line_id+"&line_status=COMPLETE&button_name=complete",
 function(err, data) {
@@ -301,7 +301,7 @@ function(err, data) {
 
 			<div class="col-md-6">
 				<textarea
-					class="form-control animated no-border"
+					class="form-control animated"
 					id="source_line_{$lines_array[results].line_id}"
 					name="source_line_{$lines_array[results].line_id}"
 					onblur="saveSourceLine({$lines_array[results].line_id});">{$lines_array[results].source_line}</textarea>
@@ -341,7 +341,7 @@ function(err, data) {
 
 					<textarea
 						tabindex="{$lines_array[results].serial_order}"
-						class="form-control animated no-border"
+						class="form-control animated"
 						id="target_line_{$lines_array[results].line_id}"
 						name="target_line_{$lines_array[results].line_id}"
 						onblur="saveLine({$lines_array[results].line_id});">{$lines_array[results].target_line}</textarea>

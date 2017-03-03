@@ -37,6 +37,7 @@ SQL;
 		}
 		
 		$lines_array [$i] = array (
+				'serial_order' => ($i+1),
 				'line_id' => ($row [id]),
 				'job_no' => ($row [job_no]),
 				'para_no' => ($row [para_no]),

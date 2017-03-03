@@ -43,15 +43,3 @@ hr {
     text-overflow: ellipsis;
     height:10px;
 }
-
-.no-border {
-    border: 0;
-
-    border_color: #F8F8F8;
-}
-
-.top-border {
-    border-top: 1px;
-    border-color: #f2f2f2;
-}
-}
