@@ -39,12 +39,13 @@ if ($_SESSION ['login'] == 1) {
 
 	elseif ($_REQUEST ['job'] == "save") {
 		
-		echo json_encode ( save_line ( $_REQUEST ['line_id'], $_REQUEST ['target_line'] ) );
+		$text = str_ireplace("<br />", "\r\n", $_REQUEST ['target_line']);		
+		echo json_encode ( save_line ( $_REQUEST ['line_id'], $text ) );
 	} 
 
 	elseif ($_REQUEST ['job'] == "save_source") {
-		
-		echo json_encode ( save_source_line ( $_REQUEST ['line_id'], $_REQUEST ['source_line'] ) );
+		$text = str_ireplace("<br />", "\r\n", $_REQUEST ['source_line']);
+		echo json_encode ( save_source_line ( $_REQUEST ['line_id'], $text ) );
 	} 
 
 	elseif ($_REQUEST ['job'] == "delete_line") {

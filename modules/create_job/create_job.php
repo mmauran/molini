@@ -4,6 +4,7 @@ include '../../functions/common_functions.php';
 require_once '../../libs/sentence_class/autoloader.php';
 include 'create_job_functions.php';
 
+
 if ($_SESSION ['login'] == 1) {
 	if ($_REQUEST ['job'] == "create_job") {
 		

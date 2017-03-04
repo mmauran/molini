@@ -12,6 +12,7 @@
 function saveLine(line_id) {
 
 var target_line = document.getElementById('target_line_'+line_id).value;
+target_line = target_line.replace(/\r?\n/g, '<br />');
 getJSON("translate.php?job=save&line_id="+line_id+"&target_line="+target_line,
 function(err, data) {
   if (err != null) {

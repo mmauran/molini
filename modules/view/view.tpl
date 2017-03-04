@@ -7,6 +7,7 @@ function copyToClipboard(element) {
   $temp.val($(element).text()).select();
   document.execCommand("copy");
   $temp.remove();
+
 }
 </script>
 {/literal}
@@ -80,10 +81,12 @@ function copyToClipboard(element) {
 
 <div class="col-md-6">
 <div>
+{if  $view_session_array.submit=='true'}
 <button
 			type="button"
 			class="btn  btn-primary btn-sm"
 			onclick="copyToClipboard('#source')">Copy Text</button>
+{/if}
 </div>
 <br />
 <div id="source">
@@ -92,10 +95,12 @@ function copyToClipboard(element) {
 </div>
 <div class="col-md-6">
 <div>
+{if  $view_session_array.submit=='true'}
 <button
 			type="button"
 			class="btn  btn-primary btn-sm"
 			onclick="copyToClipboard('#target')">Copy Text</button>
+{/if}
 </div>
 <br />
 <div id="target">
