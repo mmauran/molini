@@ -43,3 +43,6 @@ hr {
     text-overflow: ellipsis;
     height:10px;
 }
+textarea.source-box {
+    background-color: #f2f1f0;
+}
