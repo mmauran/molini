@@ -215,7 +215,7 @@ function(err, data) {
 				<div class="panel-body" style="z-index: 5000;">
 					<form action="translate.php?job=submit" method="POST">
 						<div class="form-group col-lg-9">
-							<input type="text" class="form-control small_panel" id="job_no" name="job_no" value="{$job_no}" placeholder="Job_no">
+							<input type="text" class="form-control small_panel" id="job_no" name="job_no" value="{$job_no}" placeholder="Job No">
 						</div>
 
 						<div class="form-group col-lg-3">
@@ -289,8 +289,8 @@ function(err, data) {
 </div>
 
 
-<div class="row col-lg-12" style="margin-top: 100px; align-content: flex-end;">
-	<div class="col-lg-1"></div>
+<div class="container col-lg-12" style="margin-top: 100px; margin-bottom: 10px;">
+	
 	<button type="button" class="btn  btn-primary btn-xs" data-toggle="modal"
 		data-target="#view_job"
 		onclick="viewJob({$translate_array.job_no});">PREVIEW</button>
@@ -307,14 +307,11 @@ function(err, data) {
 </div>
 
 <br />
-<div class="container">
-	<div class="row  col-md-12">
+<div class="container" style="min-height: 600px;">
 
 		{section name=results loop=$lines_array}
 
-		<div
-			class="row"
-			id="row_{$lines_array[results].line_id}">
+		<div	class="row" id="row_{$lines_array[results].line_id}">
 
 		{include file="horizontal.tpl"}
 
@@ -326,7 +323,6 @@ function(err, data) {
 		<hr>
 		{else} <br /> {/if} {/section}
 
-	</div>
 </div>
 
 <!-- Modal -->

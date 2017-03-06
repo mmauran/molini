@@ -13,14 +13,14 @@ function(err, data) {
 }
 </script>
 {/literal}
-
+<div class="content-wrapper" style="min-height: 620px;">
 <div class="container">
+	<div class="row" style="margin-top: 30px;">
 	<div class="panel panel-default">
+		<a data-toggle="collapse" href="#collapse2">
 		<div class="panel-heading">
-			<a
-				data-toggle="collapse"
-				href="#collapse2">Create Job</a>
-		</div>
+			Create Job
+		</div></a>
 		<div
 			id="collapse2"
 			class="panel-collapse collapse out">
@@ -132,12 +132,6 @@ function(err, data) {
 		</div>
 	</div>
 
-</div>
-
-<hr>
-
-<div class="container">
-
 	{section name=job loop=$job_array} {if $smarty.section.job.first}
 
 	<table
@@ -189,6 +183,9 @@ function(err, data) {
 	{else}{/if} {/section}
 </div>
 
+	
+</div>
+</div>
 <!-- Modal -->
 <div
 	id="view_job"

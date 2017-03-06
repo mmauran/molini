@@ -1,28 +1,27 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-06 16:44:27
+/* Smarty version 3.1.30, created on 2017-03-06 21:22:18
   from "/var/www/html/molini/modules/login.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bd449322de47_10166869',
+  'unifunc' => 'content_58bd85b2b33238_18816786',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9b0b0d8a319a55936f145f606731ec6944f8fcc5' => 
     array (
       0 => '/var/www/html/molini/modules/login.tpl',
-      1 => 1488798865,
+      1 => 1488815436,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:login_header.tpl' => 1,
-    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_58bd449322de47_10166869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58bd85b2b33238_18816786 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:login_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -43,7 +42,7 @@ $_smarty_tpl->_subTemplateRender("file:login_header.tpl", $_smarty_tpl->cache_id
 
     <form action="index.php?job=login" method="post">
       <div class="form-group has-feedback">
-        <input type="text" name="username" class="form-control" placeholder="Email">
+        <input type="text" name="username" class="form-control" placeholder="User Name">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -72,6 +71,6 @@ $_smarty_tpl->_subTemplateRender("file:login_header.tpl", $_smarty_tpl->cache_id
   <!-- /.login-box-body -->
 </div>
 
-<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+</body>
+</html><?php }
 }

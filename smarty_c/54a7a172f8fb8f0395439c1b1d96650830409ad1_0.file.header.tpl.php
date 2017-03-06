@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-06 17:19:05
+/* Smarty version 3.1.30, created on 2017-03-06 21:22:21
   from "/var/www/html/molini/modules/header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bd4cb1d1de24_30551190',
+  'unifunc' => 'content_58bd85b5dfddf3_22151227',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54a7a172f8fb8f0395439c1b1d96650830409ad1' => 
     array (
       0 => '/var/www/html/molini/modules/header.tpl',
-      1 => 1488800925,
+      1 => 1488815512,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58bd4cb1d1de24_30551190 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58bd85b5dfddf3_22151227 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +30,6 @@ function content_58bd4cb1d1de24_30551190 (Smarty_Internal_Template $_smarty_tpl)
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<link href="../../css/kendo.common.min.css" rel="stylesheet">
-<link href="../../css/kendo.default.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../../css/dataTables.bootstrap.css">
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -44,20 +40,13 @@ function content_58bd4cb1d1de24_30551190 (Smarty_Internal_Template $_smarty_tpl)
 <link rel="stylesheet" href="../../css/jquery-jvectormap-1.2.2.css">
 <link rel="stylesheet" href="../../css/bootstrap3-wysihtml5.min.css">
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" /> 
-<link rel="stylesheet" href="../../css/AdminLTE.min.css">
-
+<link rel="stylesheet" href="../../css/AdminLTE.css">
 
 <?php echo '<script'; ?>
  src="../../js/jquery-2.2.3.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="../../js/bootstrap.min.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- src="../../js/jquery.dataTables.min.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- src="../../js/dataTables.bootstrap.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"><?php echo '</script'; ?>
@@ -86,18 +75,14 @@ function content_58bd4cb1d1de24_30551190 (Smarty_Internal_Template $_smarty_tpl)
 <?php echo '<script'; ?>
  src="../../js/jquery.slimscroll.min.js"><?php echo '</script'; ?>
 >
-
-
 <?php echo '<script'; ?>
- src="../../../../js/jquery.autosize.min.js"><?php echo '</script'; ?>
+ src="../../js/jquery.autosize.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="../../../../js/maujs.js"><?php echo '</script'; ?>
+ src="../../js/maujs.js"><?php echo '</script'; ?>
 >
 
 </head>
 
-
-<body class="hold-transition skin-blue fixed sidebar-mini">
-<?php }
+<body class="hold-transition skin-blue fixed sidebar-mini"><?php }
 }

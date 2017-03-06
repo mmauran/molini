@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-06 14:52:35
+/* Smarty version 3.1.30, created on 2017-03-06 20:48:30
   from "/var/www/html/molini/modules/create_job/create_job.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bd2a5b5f8de2_87776336',
+  'unifunc' => 'content_58bd7dc67d7556_61037028',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e65f27e10971c09859f0a8c576fc7080accdcfd' => 
     array (
       0 => '/var/www/html/molini/modules/create_job/create_job.tpl',
-      1 => 1488790883,
+      1 => 1488813506,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_58bd2a5b5f8de2_87776336 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58bd7dc67d7556_61037028 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  <?php $_smarty_tpl->_subTemplateRender("file:navigation.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -45,14 +45,14 @@ function(err, data) {
 <?php echo '</script'; ?>
 >
 
-
+<div class="content-wrapper" style="min-height: 620px;">
 <div class="container">
+	<div class="row" style="margin-top: 30px;">
 	<div class="panel panel-default">
+		<a data-toggle="collapse" href="#collapse2">
 		<div class="panel-heading">
-			<a
-				data-toggle="collapse"
-				href="#collapse2">Create Job</a>
-		</div>
+			Create Job
+		</div></a>
 		<div
 			id="collapse2"
 			class="panel-collapse collapse out">
@@ -167,12 +167,6 @@ function(err, data) {
 		</div>
 	</div>
 
-</div>
-
-<hr>
-
-<div class="container">
-
 	<?php
 $__section_job_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_job']) ? $_smarty_tpl->tpl_vars['__smarty_section_job'] : false;
 $__section_job_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['job_array']->value) ? count($_loop) : max(0, (int) $_loop));
@@ -252,6 +246,9 @@ $_smarty_tpl->tpl_vars['__smarty_section_job'] = $__section_job_0_saved;
 ?>
 </div>
 
+	
+</div>
+</div>
 <!-- Modal -->
 <div
 	id="view_job"
