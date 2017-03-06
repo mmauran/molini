@@ -13,44 +13,52 @@
 </script>
 {/literal}
 
-<nav
-	class="navbar navbar-default navbar-static-top marginBottom-0"
-	role="navigation">
-	<div class="navbar-header">
-		<button
-			type="button"
-			class="navbar-toggle"
-			data-toggle="collapse"
-			data-target="#navbar-collapse-1">
-			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-			<span class="icon-bar"></span> <span class="icon-bar"></span>
-		</button>
-		<a
-			class="navbar-brand"
-			href="#"
-			target="_blank">{$user_name}</a>
-	</div>
-
-	<div
-		class="collapse navbar-collapse"
-		id="navbar-collapse-1">
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">{$page}</a></li>
-			<li><a href="../../index.php?job=logout">Logout</a></li>
-<li><a href="../create_job/create_job.php?job=create_job">Create Job</a></li>
-<li><a href="../translate/translate.php?job=translate">Translate</a></li>
-<li><a href="../view/view.php?job=view">View</a></li>
-			<li class="dropdown dropdown-submenu"><a
-				href="#"
-				class="dropdown-toggle"
-				data-toggle="dropdown">Settings</a>
+<header class="main-header">
+    <!-- Logo -->
+    <a href="../../index.php" class="logo" style="background-color: #3c8dbc;">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>Molini</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>MOLINI</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li {if $page=="Translate"}class="active"{/if}><a href="#"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp; Translate</a></li>
+			<li {if $page=="Create Job"}class="active"{/if}><a href="../create_job/create_job.php?job=create_job"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Create Job</a></li>
+			<li {if $page=="View"}class="active"{/if}><a href="../view/view.php?job=view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;  View</a></li>
+			<li {if $page=="Settings"}class="dropdown dropdown-submenu active" {else} class="dropdown dropdown-submenu"{/if}>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp; Settings</a>
 				<ul class="dropdown-menu">
 					<li><a href="../create_job/create_job.php?job=create_job">Create Job</a></li>
 					<li><a href="../translate/translate.php?job=translate">Translate</a></li>
-				</ul></li>
+				</ul>
+			</li>
+			</ul>
+          
+        </div>
 
-		</ul>
-	</div>
-	<!-- /.navbar-collapse -->
-</nav>
-
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          
+          <!-- Notifications: style can be found in dropdown.less -->
+          
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-user" aria-hidden="true"></i>&nbsp; <span class="hidden-xs">{$username} (My Account)</span>
+            </a>
+            
+          <!-- Control Sidebar Toggle Button -->
+          <li {if $page=="Logout"}class="active"{/if}><a href="../../index.php?job=logout"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+	
+    <!-- Header Navbar: style can be found in header.less -->
+    
+  </header>

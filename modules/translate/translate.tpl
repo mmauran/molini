@@ -1,4 +1,12 @@
-{include file="header.tpl"} {include file="navigation.tpl"} {literal}
+{include file="header.tpl"} {include file="navigation.tpl"}
+<style>
+.affix {
+     z-index: 9999 !important;
+}
+	
+</style>
+
+{literal}
 <link
 	rel="stylesheet"
 	href="../../css/system_style.css">
@@ -196,35 +204,22 @@ function(err, data) {
 {/literal}
 
 
-<div class="container-fluid">
-	<div class="container-fluid col-md-2">
-		<div class="panel panel-default">
-			<div class="panel-heading small_panel">
-				<a
-					data-toggle="collapse"
-					href="#collapse2">Options</a>
-			</div>
-			<div
-				id="collapse2"
-				class="panel-collapse collapse {if  $translate_array.submit=='true'}out{else}in{/if}">
-				<div class="panel-body">
-					<form
-						action="translate.php?job=submit"
-						method="POST">
-						<div class="form-group">
-							<input
-								type="text"
-								class="form-control small_panel"
-								id="job_no"
-								name="job_no"
-								value="{$job_no}"
-								placeholder="Job_no">
+
+<div class="container" data-spy="affix" style="background-color: #c7c7c7; padding-top: 5px; margin-top: 50px; width: 100%; height: 40px;">
+	<div class="col-lg-2">
+		<div class="panel panel-default ">
+			<a data-toggle="collapse" href="#collapse2"><div class="panel-heading" style="height: 30px; padding-top: 4px;">
+				Options
+			</div></a>
+			<div id="collapse2" class="panel-collapse collapse {if  $translate_array.submit=='true'}out{else}in{/if}">
+				<div class="panel-body" style="z-index: 5000;">
+					<form action="translate.php?job=submit" method="POST">
+						<div class="form-group col-lg-9">
+							<input type="text" class="form-control small_panel" id="job_no" name="job_no" value="{$job_no}" placeholder="Job_no">
 						</div>
 
-						<div class="">
-							<button
-								type="submit"
-								class="btn btn-default btn-sm">Go</button>
+						<div class="form-group col-lg-3">
+							<button type="submit" class="btn btn-default btn-sm">Go</button>
 						</div>
 					</form>
 					<hr>
@@ -236,19 +231,17 @@ function(err, data) {
 
 				</div>
 			</div>
-		</div>
+		</div>	
 	</div>
-	<div class="container-fluid col-md-2">
+	<div class="col-lg-1">
+		
+	</div>
+	<div class="col-lg-2">
 		<div class="form-group">
-			<input
-				type="text"
-				class="form-control input-sm"
-				id="search_text"
-				name="search_text"
-				placeholder="Search..">
+			<input type="text" class="form-control input-sm" id="search_text" name="search_text" placeholder="Search..">
 		</div>
 	</div>
-	<div class="btn-group col-md-5">
+	<div class="col-lg-4" style="padding-top: 4px;">
 		<button
 			type="button"
 			class="btn  btn-default btn-xs"
@@ -274,7 +267,7 @@ function(err, data) {
 			data-target="#madura"
 			onclick="dictSearchMadura();">Madura</button>
 	</div>
-	<div class="container-fluid col-md-3">
+	<div class="col-lg-3" style="padding-top: 4px;">
 
 		<button
 			type="button"
@@ -296,11 +289,9 @@ function(err, data) {
 </div>
 
 
-<div class="container-fluid">
-	<button
-		type="button"
-		class="btn  btn-primary btn-xs"
-		data-toggle="modal"
+<div class="row col-lg-12" style="margin-top: 100px; align-content: flex-end;">
+	<div class="col-lg-1"></div>
+	<button type="button" class="btn  btn-primary btn-xs" data-toggle="modal"
 		data-target="#view_job"
 		onclick="viewJob({$translate_array.job_no});">PREVIEW</button>
 	<button
@@ -314,9 +305,10 @@ function(err, data) {
 	</button>
 
 </div>
+
 <br />
-<div class="container-fluid">
-	<div class="container-fluid col-md-12 molini_scroll">
+<div class="container">
+	<div class="row  col-md-12">
 
 		{section name=results loop=$lines_array}
 
@@ -324,7 +316,7 @@ function(err, data) {
 			class="row"
 			id="row_{$lines_array[results].line_id}">
 
-{include file="horizontal.tpl"}
+		{include file="horizontal.tpl"}
 
 		
 
