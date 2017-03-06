@@ -220,12 +220,20 @@ function(err, data) {
 								value="{$job_no}"
 								placeholder="Job_no">
 						</div>
+
 						<div class="">
 							<button
 								type="submit"
 								class="btn btn-default btn-sm">Go</button>
 						</div>
 					</form>
+					<hr>
+					<div>
+						<button class="btn btn-primary btn-block btn-sm">Vertical View</button>
+						<button class="btn btn-primary btn-block btn-sm">Horizontal View</button>
+					</div>
+
+
 				</div>
 			</div>
 		</div>
@@ -316,13 +324,13 @@ function(err, data) {
 			class="row"
 			id="row_{$lines_array[results].line_id}">
 
-			<div class="col-md-6">
+			<div class="col-md-6 source-box">
 				<textarea
 					class="form-control animated"
 					id="source_line_{$lines_array[results].line_id}"
 					name="source_line_{$lines_array[results].line_id}"
 					onblur="saveSourceLine({$lines_array[results].line_id});">{$lines_array[results].source_line}</textarea>
-				<div class="row top-border">
+				<div class="row">
 					<div class="btn-group col-md-1">
 						<button
 							class="btn btn-default btn-xs"
@@ -333,11 +341,10 @@ function(err, data) {
 
 					</div>
 
-					<div
-						class="s_timestamp_box col-md-11"
-						id="source_saved_{$lines_array[results].line_id}">
-						{$lines_array[results].source_updated} {if
-						$lines_array[results].translation_available==1}
+					<div class="s_timestamp_box col-md-11">
+						<div id="source_saved_{$lines_array[results].line_id}">
+							{$lines_array[results].source_updated}</div>
+						{if $lines_array[results].translation_available==1}
 						<button
 							type="button"
 							class="btn  btn-default btn-xs"
@@ -353,7 +360,7 @@ function(err, data) {
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 target-box">
 				<div class="row">
 
 					<textarea

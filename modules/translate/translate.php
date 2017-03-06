@@ -140,7 +140,7 @@ if ($_SESSION ['login'] == 1) {
 
 	elseif ($_REQUEST ['job'] == "dict_search_ta_wiktionary") {
 		
-		$search_text=trim($_REQUEST[search_text]);
+		$search_text = strtolower(trim($_REQUEST[search_text]));
 		$ta_json = file_get_contents ( 'https://ta.wiktionary.org/w/api.php?action=parse&format=json&prop=text|revid|displaytitle&callback=?&page=' . $search_text );
 		$ta_json2 = str_replace ( "/**/({", "{", "$ta_json" );
 		$ta_json3 = str_replace ( "})", "}", "$ta_json2" );
@@ -162,7 +162,7 @@ if ($_SESSION ['login'] == 1) {
 			இச்சொல்லை விக்சனரியில் சேர்ப்பதற்குக் கூடிய விரைவில் முயற்சியெடுக்கப்படும். நன்றி.
 			<br />
 			<br />
-			<a href="https://ta.wiktionary.org/w/index.php?title=' . $search_text . '&action=edit&redlink=1" >இந்த இணைப்பில் நீங்களே சொல்லின் பொருளை விக்சனரியில் சேர்த்துவிடலாம். உங்கள் உதவியால் அனைவருக்கும் பயன் கிடைக்கும்.</a>
+			<a href="https://ta.wiktionary.org/w/index.php?title=' . $search_text . '&action=edit&redlink=1" target="_blank">இந்த இணைப்பில் நீங்களே சொல்லின் பொருளை விக்சனரியில் சேர்த்துவிடலாம். உங்கள் உதவியால் அனைவருக்கும் பயன் கிடைக்கும்.</a>
 			<br />
 			<br />
 			எடுத்துக்காட்டு : <br /><br />
@@ -191,7 +191,8 @@ if ($_SESSION ['login'] == 1) {
 
 	elseif ($_REQUEST ['job'] == "dict_search_en_wiktionary") {
 		
-		$en_json = file_get_contents ( 'https://en.wiktionary.org/w/api.php?action=parse&format=json&prop=text|revid|displaytitle&callback=?&page=' . $_REQUEST ['search_text'] );
+		$search_text = strtolower(trim($_REQUEST[search_text]));
+		$en_json = file_get_contents ( 'https://en.wiktionary.org/w/api.php?action=parse&format=json&prop=text|revid|displaytitle&callback=?&page=' . $search_text );
 		$en_json2 = str_replace ( "/**/({", "{", "$en_json" );
 		$en_json3 = str_replace ( "})", "}", "$en_json2" );
 		$en_obj = json_decode ( $en_json3, true );
@@ -205,6 +206,7 @@ if ($_SESSION ['login'] == 1) {
 	} 
 
 	elseif ($_REQUEST ['job'] == "dict_search_molini_lookup") {
+		
 		
 		if ($_REQUEST ['search_text'] == "") {
 			$array = array (
@@ -221,6 +223,8 @@ if ($_SESSION ['login'] == 1) {
 	} 
 
 	elseif ($_REQUEST ['job'] == "dict_search_madura") {
+		
+		$search_text = strtolower(trim($_REQUEST[search_text]));
 		function httpGet($url) {
 			$ch = curl_init ();
 			
@@ -234,7 +238,7 @@ if ($_SESSION ['login'] == 1) {
 			return $output;
 		}
 		
-		$out = httpGet ( "http://maduraonline.com/?find=$_REQUEST[search_text]" );
+		$out = httpGet ( "http://maduraonline.com/?find=$search_text" );
 		$array = array (
 				'text' => ($out) 
 		);

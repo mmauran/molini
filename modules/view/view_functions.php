@@ -39,6 +39,7 @@ SQL;
 				$source_text = $source_text . $row ['source_line'];
 				$target_text = $target_text . " " . $row ['target_line'];
 			} else {
+				
 				$source_text = $source_text . "<br /><br />" . $row ['source_line'];
 				$target_text = $target_text . "<br /><br />" . $row ['target_line'];
 			}
@@ -48,12 +49,18 @@ SQL;
 		$i ++;
 	}
 	
+	$source_text=nl2br($source_text);
+	$target_text=nl2br($target_text);
+	
+
 	$source_text_count = str_word_count ( str_replace ( '<br />', "", $source_text ) );
 	$source_text_page = round ( $source_text_count / 450, 2 );
 	$array = array (
 			'job_no' => ($data [job_no]),
 			'source_text' => ($source_text),
 			'target_text' => ($target_text),
+			'source_text_nl' => ($source_text_nl),
+			'target_text_nl' => ($target_text_nl),
 			'source_text_count' => ($source_text_count),
 			'source_text_page' => ($source_text_page) 
 	);
