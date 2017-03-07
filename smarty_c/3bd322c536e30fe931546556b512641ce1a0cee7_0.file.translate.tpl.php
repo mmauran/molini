@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-06 21:22:26
+/* Smarty version 3.1.30, created on 2017-03-07 15:50:43
   from "/var/www/html/molini/modules/translate/translate.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bd85ba9e2b15_85324802',
+  'unifunc' => 'content_58be897b85eb49_01524933',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3bd322c536e30fe931546556b512641ce1a0cee7' => 
     array (
       0 => '/var/www/html/molini/modules/translate/translate.tpl',
-      1 => 1488815531,
+      1 => 1488882037,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_58bd85ba9e2b15_85324802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58be897b85eb49_01524933 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  <?php $_smarty_tpl->_subTemplateRender("file:navigation.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -339,36 +339,17 @@ function(err, data) {
 				id="completed_percentage"><?php echo $_smarty_tpl->tpl_vars['translate_array']->value['completed_percentage'];?>
 </span>
 		</button>
-
+		<button type="button" class="btn  btn-primary btn-xs" data-toggle="modal"
+			data-target="#view_job"
+			onclick="viewJob(<?php echo $_smarty_tpl->tpl_vars['translate_array']->value['job_no'];?>
+);">PREVIEW</button>
 	</div>
 
 </div>
 
-
-<div class="container col-lg-12" style="margin-top: 100px; margin-bottom: 10px;">
-	
-	<button type="button" class="btn  btn-primary btn-xs" data-toggle="modal"
-		data-target="#view_job"
-		onclick="viewJob(<?php echo $_smarty_tpl->tpl_vars['translate_array']->value['job_no'];?>
-);">PREVIEW</button>
-	<button
-		type="button"
-		class="btn btn-primary btn-xs"
-		data-toggle="modal"
-		data-target="#view_job"
-		onclick="viewJob(<?php echo $_smarty_tpl->tpl_vars['translate_array']->value['job_no'];?>
-);">
-		<span class="badge">Job No: <?php echo $_smarty_tpl->tpl_vars['translate_array']->value['job_no'];?>
-</span>
-		<?php echo $_smarty_tpl->tpl_vars['translate_array']->value['job_name'];?>
-
-	</button>
-
-</div>
-
 <br />
-<div class="container" style="min-height: 600px;">
-
+<div class="row" style="min-height: 600px; margin-top: 100px;" >
+	<div class="col-lg-12" style="width: 96%; margin-left: 1%;">
 		<?php
 $__section_results_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_results']) ? $_smarty_tpl->tpl_vars['__smarty_section_results'] : false;
 $__section_results_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['lines_array']->value) ? count($_loop) : max(0, (int) $_loop));
@@ -385,8 +366,6 @@ for ($__section_results_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_sectio
 ?>
 
 
-		
-
 		</div>
 
 		<?php if ($_smarty_tpl->tpl_vars['lines_array']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_results']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_results']->value['index'] : null)]['para_break'] == 'true') {?>
@@ -398,7 +377,7 @@ if ($__section_results_0_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_results'] = $__section_results_0_saved;
 }
 ?>
-
+	</div>
 </div>
 
 <!-- Modal -->

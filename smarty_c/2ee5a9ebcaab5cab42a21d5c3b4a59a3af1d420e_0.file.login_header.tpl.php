@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-06 16:41:58
+/* Smarty version 3.1.30, created on 2017-03-07 14:07:56
   from "/var/www/html/molini/modules/login_header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bd43fecee793_55683458',
+  'unifunc' => 'content_58be716438bd08_36904694',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2ee5a9ebcaab5cab42a21d5c3b4a59a3af1d420e' => 
     array (
       0 => '/var/www/html/molini/modules/login_header.tpl',
-      1 => 1488798652,
+      1 => 1488875303,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58bd43fecee793_55683458 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58be716438bd08_36904694 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,14 +89,14 @@ function content_58bd43fecee793_55683458 (Smarty_Internal_Template $_smarty_tpl)
 
 
 <?php echo '<script'; ?>
- src="../../../../js/jquery.autosize.min.js"><?php echo '</script'; ?>
+ src="../../js/jquery.autosize.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="../../../../js/maujs.js"><?php echo '</script'; ?>
+ src="../../js/maujs.js"><?php echo '</script'; ?>
 >
 
 </head>
 
 
-<body class="hold-transition login-page" style="background-image: url(../../images/bg.png)"><?php }
+<body class="hold-transition login-page" style="background-image: url(../../images/bg.jpg)"><?php }
 }

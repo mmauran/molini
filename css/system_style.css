@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+textarea {
+    resize: none;
+}
+
 textarea:focus {
 	border: 1px solid #F8F8FF;
 	vertical-align: top;

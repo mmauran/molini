@@ -283,46 +283,28 @@ function(err, data) {
 				class="badge"
 				id="completed_percentage">{$translate_array.completed_percentage}</span>
 		</button>
-
+		<button type="button" class="btn  btn-primary btn-xs" data-toggle="modal"
+			data-target="#view_job"
+			onclick="viewJob({$translate_array.job_no});">PREVIEW</button>
 	</div>
 
 </div>
 
-
-<div class="container col-lg-12" style="margin-top: 100px; margin-bottom: 10px;">
-	
-	<button type="button" class="btn  btn-primary btn-xs" data-toggle="modal"
-		data-target="#view_job"
-		onclick="viewJob({$translate_array.job_no});">PREVIEW</button>
-	<button
-		type="button"
-		class="btn btn-primary btn-xs"
-		data-toggle="modal"
-		data-target="#view_job"
-		onclick="viewJob({$translate_array.job_no});">
-		<span class="badge">Job No: {$translate_array.job_no}</span>
-		{$translate_array.job_name}
-	</button>
-
-</div>
-
 <br />
-<div class="container" style="min-height: 600px;">
-
+<div class="row" style="min-height: 600px; margin-top: 100px;" >
+	<div class="col-lg-12" style="width: 96%; margin-left: 1%;">
 		{section name=results loop=$lines_array}
 
 		<div	class="row" id="row_{$lines_array[results].line_id}">
 
 		{include file="horizontal.tpl"}
 
-		
-
 		</div>
 
 		{if $lines_array[results].para_break == 'true'}
 		<hr>
 		{else} <br /> {/if} {/section}
-
+	</div>
 </div>
 
 <!-- Modal -->

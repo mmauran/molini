@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-06 21:16:08
+/* Smarty version 3.1.30, created on 2017-03-07 14:09:41
   from "/var/www/html/molini/modules/navigation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bd84403d9277_24854853',
+  'unifunc' => 'content_58be71cd3b9bd3_74106545',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '66a77fe2dfdce88f6fdfc53d786f4c18ecf0c612' => 
     array (
       0 => '/var/www/html/molini/modules/navigation.tpl',
-      1 => 1488815162,
+      1 => 1488875977,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58bd84403d9277_24854853 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58be71cd3b9bd3_74106545 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php echo '<script'; ?>
@@ -52,8 +52,8 @@ function content_58bd84403d9277_24854853 (Smarty_Internal_Template $_smarty_tpl)
       <!-- Sidebar toggle button-->
       <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li <?php if ($_smarty_tpl->tpl_vars['page']->value == "Translate") {?>class="active"<?php }?>><a href="../translate/translate.php?job=translate"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp; Translate</a></li>
-			<li <?php if ($_smarty_tpl->tpl_vars['page']->value == "Create Job") {?>class="active"<?php }?>><a href="../create_job/create_job.php?job=create_job"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Create Job</a></li>
+            <li <?php if ($_smarty_tpl->tpl_vars['page']->value == "Create Job") {?>class="active"<?php }?>><a href="../create_job/create_job.php?job=create_job"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Create Job</a></li>
+			<li <?php if ($_smarty_tpl->tpl_vars['page']->value == "Translate") {?>class="active"<?php }?>><a href="../translate/translate.php?job=translate"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp; Translate</a></li>
 			<li <?php if ($_smarty_tpl->tpl_vars['page']->value == "View") {?>class="active"<?php }?>><a href="../view/view.php?job=view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;  View</a></li>
 			<li <?php if ($_smarty_tpl->tpl_vars['page']->value == "Settings") {?>class="dropdown dropdown-submenu active" <?php } else { ?> class="dropdown dropdown-submenu"<?php }?>>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp; Settings</a>

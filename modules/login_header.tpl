@@ -37,10 +37,10 @@
 <script src="../../js/jquery.slimscroll.min.js"></script>
 
 
-<script src="../../../../js/jquery.autosize.min.js"></script>
-<script src="../../../../js/maujs.js"></script>
+<script src="../../js/jquery.autosize.min.js"></script>
+<script src="../../js/maujs.js"></script>
 
 </head>
 
 
-<body class="hold-transition login-page" style="background-image: url(../../images/bg.png)">
+<body class="hold-transition login-page" style="background-image: url(../../images/bg.jpg)">
